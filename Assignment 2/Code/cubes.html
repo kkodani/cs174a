@@ -1,0 +1,48 @@
+<html>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+
+attribute vec4 vPosition;
+
+uniform mat4 modelViewMatrix;
+
+void main() 
+{
+    gl_Position = modelViewMatrix * vPosition;
+
+} 
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+
+uniform vec4 vColor;
+
+void main()
+{
+    gl_FragColor = vColor;
+}
+</script>
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="cubes.js"></script>
+
+<body>
+<canvas id="gl-canvas" width="500" height="500">
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+
+<p>
+Press 'c' to cycle colors.<br>
+Press 'n' to narrow FOV.  Press 'w' to widen FOV.<br>
+Press 'i' to move forward.  Press 'm' to move backward.<br>  
+Press 'j' to move left.  Press 'k' to move right.<br>
+Press 'up' to rotate up.  Press 'down' to rotate down.<br>
+Press 'left' to rotate left.  Press 'right' to rotate right.<br>
+Press 'h' for crosshair.</p>
+
+</body>
+</html>
